@@ -1,0 +1,16 @@
+[package]
+name = "test_console_wasm"
+version = "0.1.0"
+authors = ["Richard Dodd <richard.o.dodd@gmail.com>"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+#js-sys = { path = "../../wasm-bindgen/crates/js-sys" }
+web-sys = { path = "../../wasm-bindgen/crates/web-sys" }
+
+[dependencies.wasm-bindgen]
+path = "../../wasm-bindgen"
+#features = ["xxx_debug_only_print_generated_code"]
+

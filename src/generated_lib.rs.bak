@@ -1,0 +1,91 @@
+extern crate wasm_bindgen;
+
+#[no_mangle]
+#[allow(non_snake_case)]
+#[doc(hidden)]
+#[cfg(all(target_arch = "wasm32", not(target_os = "emscripten")))]
+pub extern "C" fn __wbindgen_describe___wbg_log_894f9ca062837e26() {
+    use wasm_bindgen::describe::*;
+    inform(FUNCTION);
+    inform(1u32);
+    <&str as WasmDescribe>::describe();
+    inform(0);
+}
+
+mod console {
+#[allow(bad_style)]
+#[cfg(all(target_arch = "wasm32", not(target_os = "emscripten")))]
+#[doc = ""]
+pub fn log(s: &str) {
+    ::wasm_bindgen::__rt::link_mem_intrinsics();
+    #[link(wasm_import_module = "__wbindgen_placeholder__")]
+    extern "C" {
+        fn __wbg_log_894f9ca062837e26(s: <&str as ::wasm_bindgen::convert::IntoWasmAbi>::Abi)
+            -> ();
+    }
+    unsafe {
+        let _ret = {
+            let mut __stack = ::wasm_bindgen::convert::GlobalStack::new();
+            let s = <&str as ::wasm_bindgen::convert::IntoWasmAbi>::into_abi(s, &mut __stack);
+            __wbg_log_894f9ca062837e26(s)
+        };
+        ()
+    }
+}
+#[allow(bad_style, unused_variables)]
+#[cfg(not(all(target_arch = "wasm32", not(target_os = "emscripten"))))]
+#[doc = ""]
+pub fn log(s: &str) {
+    panic!(
+        "cannot call wasm-bindgen imported functions on \
+         non-wasm targets"
+    );
+}
+}
+
+#[allow(non_upper_case_globals)]
+#[cfg(target_arch = "wasm32")]
+#[link_section = "__wasm_bindgen_unstable"]
+#[doc(hidden)]
+pub static __WASM_BINDGEN_GENERATED_50eb08d47552231d :
+[ u8 ; 283usize ] = *
+b"\x17\x01\x00\x00{\"exports\":[],\"enums\":[],\"imports\":[{\"module\":null,\"js_namespace\":\"console\",\"kind\":{\"kind\":\"function\",\"shim\":\"__wbg_log_894f9ca062837e26\",\"catch\":false,\"method\":null,\"structural\":false,\"function\":{\"name\":\"log\"}}}],\"structs\":[],\"version\":\"0.2.15 (5b935526f)\",\"schema_version\":\"8\"}";
+
+pub fn greet(name: &str) {
+    console::log(&format!("Hello, {}!", name));
+}
+#[export_name = "greet"]
+#[allow(non_snake_case)]
+#[cfg(all(target_arch = "wasm32", not(target_os = "emscripten")))]
+pub extern "C" fn __wasm_bindgen_generated_greet(
+    arg0: <str as ::wasm_bindgen::convert::RefFromWasmAbi>::Abi,
+) {
+    ::wasm_bindgen::__rt::link_mem_intrinsics();
+    let _ret = {
+        let mut __stack = unsafe { ::wasm_bindgen::convert::GlobalStack::new() };
+        let arg0 = unsafe {
+            <str as ::wasm_bindgen::convert::RefFromWasmAbi>::ref_from_abi(arg0, &mut __stack)
+        };
+        let arg0 = &*arg0;
+        greet(arg0)
+    };
+}
+#[no_mangle]
+#[allow(non_snake_case)]
+#[doc(hidden)]
+#[cfg(all(target_arch = "wasm32", not(target_os = "emscripten")))]
+pub extern "C" fn __wbindgen_describe_greet() {
+    use wasm_bindgen::describe::*;
+    inform(FUNCTION);
+    inform(1u32);
+    <&str as WasmDescribe>::describe();
+    inform(0);
+}
+#[allow(non_upper_case_globals)]
+#[cfg(target_arch = "wasm32")]
+#[link_section = "__wasm_bindgen_unstable"]
+#[doc(hidden)]
+pub static
+__WASM_BINDGEN_GENERATED_bbc0315d281cc3c3 : [ u8 ; 214usize ] = *
+b"\xd2\x00\x00\x00{\"exports\":[{\"class\":null,\"method\":false,\"consumed\":false,\"constructor\":null,\"function\":{\"name\":\"greet\"},\"comments\":[]}],\"enums\":[],\"imports\":[],\"structs\":[],\"version\":\"0.2.15 (5b935526f)\",\"schema_version\":\"8\"}"
+;
